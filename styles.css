@@ -1,0 +1,93 @@
+/* simple reset */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body{
+  font-family: Arial, sans-serif;
+  background: #f8f1ff; /* soft lavender */
+  min-height: 100vh;
+}
+
+.wrap{
+  max-width: 900px;
+  margin: 70px auto 40px;
+  padding: 0 16px;
+}
+
+h1{
+  text-align: center;
+  color: #6b2fa3; /* plum */
+  margin-bottom: 10px;
+}
+
+.tips{
+  text-align: center;
+  color: #6b2fa3;
+  background: #ffffff;
+  border: 2px dashed #d89cf7; /* pastel violet */
+  padding: 10px 14px;
+  border-radius: 10px;
+  margin: 0 auto 18px;
+  max-width: 560px;
+}
+
+/* floating tracker */
+#tracker{
+  position: fixed;
+  top: 16px; left: 16px;
+  background: #ffffff;
+  border: 2px solid #ff66b3; /* pink */
+  color: #6b2fa3;
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-size: 14px;
+  z-index: 10;
+}
+
+/* interactive area */
+#garden{
+  position: relative;
+  width: min(90vw, 800px);
+  height: 420px;
+  margin: 22px auto;
+  border: 3px dashed #ff66b3;
+  border-radius: 18px;
+  background: radial-gradient(#ffe6f4, #f6d7ff 60%); /* pink -> lilac */
+  overflow: hidden;
+  cursor: crosshair;
+}
+
+/* the moving dot */
+#mover{
+  position: absolute;
+  width: 26px; height: 26px;
+  background: #ff66b3;
+  border-radius: 50%;
+  left: 20px; top: 20px;     /* starting spot */
+  box-shadow: 0 0 10px rgba(255, 102, 179, 0.5);
+  transition: left .25s ease, top .25s ease, transform .25s ease;
+}
+
+/* click “pop” */
+.pop{ transform: scale(1.25); }
+
+/* --- ripple burst for double-click --- */
+.ripple{
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border: 3px solid #ff66b3;         /* pink outline */
+  border-radius: 50%;
+  left: 0; top: 0;
+  opacity: 0.85;
+  pointer-events: none;               /* ignore mouse */
+  box-shadow: 0 0 12px rgba(255,102,179,.5);
+  animation: ripple 700ms ease-out forwards;
+  transform: translate(-50%, -50%) scale(0.1); /* centered at left/top */
+}
+
+@keyframes ripple{
+  to{
+    transform: translate(-50%, -50%) scale(10);
+    opacity: 0;
+  }
+}

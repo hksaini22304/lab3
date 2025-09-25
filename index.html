@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mouse Playground (Beginner)</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <!-- Small fixed tracker showing coordinates + last event -->
+  <div id="tracker">
+    X: <span id="xOut">0</span> |
+    Y: <span id="yOut">0</span> |
+    Event: <span id="evtOut">none</span>
+  </div>
+
+  <div class="wrap">
+    <h1>💖 Mouse Playground</h1>
+    <p class="tips">
+      • Move your mouse to see coordinates<br/>
+      • Click inside the box to move the pink dot (logs the event)<br/>
+      • Double-click to create a pink ripple burst where you clicked
+    </p>
+
+    <!-- The specific element we interact with -->
+    <div id="garden" title="Click or double-click anywhere in the box">
+      <div id="mover" aria-label="Movable dot"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
