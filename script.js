@@ -12,6 +12,7 @@ document.addEventListener("mousemove", function (e) {
   evtOut.textContent = "mousemove";
 });
 
+
 // click inside the garden to move the dot (and log event)
 box.addEventListener("click", function (e) {
   console.log(e); // log the event object
@@ -19,6 +20,7 @@ box.addEventListener("click", function (e) {
   var rect = box.getBoundingClientRect();
   var x = e.clientX - rect.left;
   var y = e.clientY - rect.top;
+
 
   // center a 26x26 dot on the click
   var half = 13;
@@ -33,6 +35,7 @@ box.addEventListener("click", function (e) {
 
   evtOut.textContent = "click";
 });
+
 
 // double-click: show a visible pink ripple at the click point (and log event)
 box.addEventListener("dblclick", function (e) {
@@ -56,3 +59,9 @@ box.addEventListener("dblclick", function (e) {
 
   evtOut.textContent = "dblclick";
 });
+
+
+
+
+
+
